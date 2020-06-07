@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 export default function Login() {
 
@@ -16,7 +17,7 @@ export default function Login() {
                 <input type="text" />
             </div>
             <div className='formRow'>
-                <button className="primaryBtn">Login</button>
+            <Link to="/home"><button className="primaryBtn">Login</button></Link>
             </div>
         </form>
     )
