@@ -11,10 +11,11 @@ export default class Home extends Component {
 
     componentDidMount(){
         Services.getImages().then(data => this.setState({data}));
+        alert(this.state.data);
     }
 
     componentWillUnmount(){
-        alert("Logged out");
+        //alert("Logged out");
     }
 
     deleteImageHandler = (id) => {
@@ -22,9 +23,12 @@ export default class Home extends Component {
     }
 
     render() {
+        if(this.state.data===null)
+                return;
         return (
             <>
                 <Link to="/"><button className="primaryBtn">Logout</button></Link>
+                
                 <h1>Image Gallary</h1>
                 <div className="container">
                     <ImageList data = {this.state.data}  deleteImageHandler={this.deleteImageHandler} />
