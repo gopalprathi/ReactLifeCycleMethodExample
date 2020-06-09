@@ -17,7 +17,7 @@ export default function Login() {
                 <input type="text" />
             </div>
             <div className='formRow'>
-            <Link to="/home"><button className="primaryBtn">Login</button></Link>
+            <Link to="/Home"><button className="primaryBtn">Login</button></Link>
             </div>
         </form>
     )

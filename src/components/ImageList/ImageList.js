@@ -4,7 +4,8 @@ import './ImageList.css';
 
 const ImageList = ({data, deleteImageHandler}) => {
     //console.log(data);
-    if(data !== ''){
+    if(data !== '')
+    {
         return(
             data.map(item => {
                 return (
