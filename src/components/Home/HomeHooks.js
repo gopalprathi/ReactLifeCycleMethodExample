@@ -5,18 +5,18 @@ import ImageList from '../ImageList/ImageList';
 
 const HomeHooks = () => {
 
-    const [data, setData] = useState([0]);
+    const [data, setData] = useState([]);
 
     var deleteImageHandler = (id) => {
-        Services.deleteImage(id).then(data => setData({data}));
+        Services.deleteImage(id).then(data => setData(data));
     }
 
     useEffect(() => {
         console.log('componentDidMount');
-        Services.getImages().then(data => setData({data}));
-    }, [data]);
+        Services.getImages().then(data => setData(data));
+    }, []);
         
-        if(data !== null || data!== '' || data.count>0)
+        if(data)
         {
             return(
                 <>

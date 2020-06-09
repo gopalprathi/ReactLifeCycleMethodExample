@@ -3,7 +3,6 @@ import ImageItem from '../ImageItem/ImageItem';
 import './ImageList.css';
 
 const ImageList = ({data, deleteImageHandler}) => {
-    //console.log(data);
     if(data !== '')
     {
         return(

@@ -8,7 +8,7 @@ class Services {
         .then(res => res.json())
         .then(data => data)
         .catch(error=> null);
-        console.log(data);
+        //console.log(data);
         return data;
     }
 
@@ -17,7 +17,7 @@ class Services {
         .then(res => res.json())
         .then(data => data)
         .catch(error=> null);
-        console.log(data);
+        //console.log(data);
         return data;
     }
 }
