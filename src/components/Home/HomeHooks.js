@@ -13,15 +13,12 @@ const HomeHooks = () => {
         Services.getImages().then(data => setData(data));
     }, []);
 
-    useEffect(() => {
+    useEffect(()=>{
         console.log("HomeHooks: componentDidUpdate");
-      });
-
-    useEffect( ()=>{
         return ( ()=>{
            console.log('HomeHooks: componentWillUnmount');
         });
-     }, []);
+     }, [imageData]);
         
         if(imageData)
         {
@@ -30,6 +27,7 @@ const HomeHooks = () => {
                 <Link to="/"><button className="primaryBtn">Logout</button></Link>
                 <h1>Image Gallary</h1>
                 <div className="container">
+                    {/* This function will draw the listview of images. */}
                     <ImageListHooks data={imageData}/>
                 </div>
                 </>

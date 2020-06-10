@@ -7,22 +7,20 @@ const ImageListHooks = ({data}) => {
         console.log('ImageListHooks: componentDidMount');
     }, []);
 
-    useEffect(() => {
-        console.log("ImageListHooks: componentDidUpdate");
-      });
-
     useEffect( ()=>{
+        console.log("ImageListHooks: componentDidUpdate");
         return ( ()=>{
            console.log('ImageListHooks: componentWillUnmount');
         });
-     }, []);
+     }, [data]);
 
     if(data)
     {
         return(
             data.map(item => {
+                {/* This function will draw the individual image. */}
                 return (
-                    <ImageItemHooks id={item.id} imagedata={item}/>
+                    <ImageItemHooks key={item.id} imagedata={item}/>
                 )
             })
         )

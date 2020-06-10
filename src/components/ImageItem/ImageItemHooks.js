@@ -2,6 +2,7 @@ import './ImageItem.css';
 import React from 'react';
 import Services from '../../Services/Services';
 
+{/* This function will draw the individual image. */}
 export default function ImageItemHooks({imagedata}){
 
     function removeImage(id){
