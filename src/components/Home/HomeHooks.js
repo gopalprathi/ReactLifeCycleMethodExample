@@ -6,7 +6,7 @@ import './Home.css';
 
 const HomeHooks = () => {
 
-    const [data, setData] = useState([]);
+    const [imageData, setData] = useState([]);
 
     useEffect(() => {
         console.log('HomeHooks: componentDidMount');
@@ -23,14 +23,14 @@ const HomeHooks = () => {
         });
      }, []);
         
-        if(data)
+        if(imageData)
         {
             return(
                 <>
                 <Link to="/"><button className="primaryBtn">Logout</button></Link>
                 <h1>Image Gallary</h1>
                 <div className="container">
-                    <ImageListHooks data={data}/>
+                    <ImageListHooks data={imageData}/>
                 </div>
                 </>
             )

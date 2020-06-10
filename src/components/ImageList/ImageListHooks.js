@@ -5,7 +5,6 @@ import React,{ useEffect } from 'react';
 const ImageListHooks = ({data}) => {
     useEffect(() => {
         console.log('ImageListHooks: componentDidMount');
-        console.log(data);
     }, []);
 
     useEffect(() => {
@@ -22,7 +21,6 @@ const ImageListHooks = ({data}) => {
     {
         return(
             data.map(item => {
-                console.log(item);
                 return (
                     <ImageItemHooks id={item.id} imagedata={item}/>
                 )
