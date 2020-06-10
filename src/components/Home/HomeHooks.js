@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import Services from '../../Services/Services';
 import {Link} from 'react-router-dom';
-import ImageList from '../ImageList/ImageList';
+import ImageListHooks from '../ImageList/ImageListHooks';
 
 const HomeHooks = () => {
 
     const [data, setData] = useState([]);
 
-    var deleteImageHandler = (id) => {
-        Services.deleteImage(id).then(data => setData(data));
-    }
-
     useEffect(() => {
-        console.log('componentDidMount');
+        console.log('HomeHooks: componentDidMount');
         Services.getImages().then(data => setData(data));
     }, []);
+
+    useEffect(() => {
+        console.log("HomeHooks: componentDidUpdate");
+      });
+
+    useEffect( ()=>{
+        return ( ()=>{
+           console.log('HomeHooks: componentWillUnmount');
+        });
+     }, []);
         
         if(data)
         {
@@ -23,9 +29,15 @@ const HomeHooks = () => {
                 <Link to="/"><button className="primaryBtn">Logout</button></Link>
                 <h1>Image Gallary</h1>
                 <div className="container">
-                <ImageList data={data}  deleteImageHandler={deleteImageHandler} />
+                   {ImageListHooks({data})}
                 </div>
                 </>
+            )
+        }
+        else
+        {
+            return(
+                <h1>No data present</h1>
             )
         }
 }
