@@ -1,10 +1,8 @@
-const AccessKey = '/?client_id=2JoT-yGIO6qGmhZ-eUpTi0zgZzHOj_niTxOvVLVccVs';
-//const SecretKey = 'wxDSoHEfPOw9KD_iERS_ejMcIVY6vDF3ei4wYk8dWi8';
 
 class Services {
 
     async getImages(){
-        let data = await fetch(`https://api.unsplash.com/collections${AccessKey}`)
+        let data = await fetch(`https://api.unsplash.com/collections${process.env.REACT_APP_API_KEY}`)
         .then(res => res.json())
         .then(data => data)
         .catch(error=> null);
@@ -13,7 +11,7 @@ class Services {
     }
 
     async deleteImage(id){
-        let data = await fetch(`https://api.unsplash.com/collections/photo/${id}${AccessKey}`,{method:'delete'})
+        let data = await fetch(`https://api.unsplash.com/collections/photo/${id}${process.env.REACT_APP_API_KEY}`,{method:'delete'})
         .then(res => res.json())
         .then(data => data)
         .catch(error=> null);
