@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Services from '../../Services/Services';
 import {Link} from 'react-router-dom';
 import ImageListHooks from '../ImageList/ImageListHooks';
+import './Home.css';
 
 const HomeHooks = () => {
 
@@ -29,7 +30,7 @@ const HomeHooks = () => {
                 <Link to="/"><button className="primaryBtn">Logout</button></Link>
                 <h1>Image Gallary</h1>
                 <div className="container">
-                   {ImageListHooks({data})}
+                    <ImageListHooks data={data}/>
                 </div>
                 </>
             )

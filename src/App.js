@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import Login from './components/Login/Login';
-import Home from './components/Home/Home';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import HomeHooks from './components/Home/HomeHooks';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/'><Login /></Route>
-          <Route path='/home'><Home /></Route>
+          <Route path='/home'><HomeHooks /></Route>
         </Switch>
       </Router>
     </div>

@@ -1,10 +1,11 @@
 import './ImageList.css';
 import ImageItemHooks from '../ImageItem/ImageItemHooks';
-import { useEffect } from 'react';
+import React,{ useEffect } from 'react';
 
 const ImageListHooks = ({data}) => {
     useEffect(() => {
         console.log('ImageListHooks: componentDidMount');
+        console.log(data);
     }, []);
 
     useEffect(() => {
@@ -17,12 +18,13 @@ const ImageListHooks = ({data}) => {
         });
      }, []);
 
-    if(data !== '')
+    if(data)
     {
         return(
             data.map(item => {
+                console.log(item);
                 return (
-                    ImageItemHooks(item.id, item)
+                    <ImageItemHooks id={item.id} imagedata={item}/>
                 )
             })
         )
