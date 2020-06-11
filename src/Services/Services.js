@@ -1,7 +1,8 @@
 
 class Services {
     async getImages(){
-        let data = await fetch(`https://api.unsplash.com/collections${process.env.REACT_APP_API_KEY}`)
+        console.log("Process.env is", process.env.REACT_APP_API_KEY);
+        let data = await fetch(`https://api.unsplash.com/collections/?client_id=${process.env.REACT_APP_API_KEY}`)
         .then(res => res.json())
         .then(data => data)
         .catch(error=> null);

@@ -14,6 +14,7 @@ export default class ImageItem extends Component {
             <figure className="imgContainer" ref={this.componentRef}> 
                 <img src={this.props.imagedata.cover_photo.urls.small} alt={this.props.imagedata.cover_photo.alt_description} />
                 <div className="imageInfoBar">
+                <div>By: {this.props.imagedata.user.name}</div>
                     <span>{this.props.imagedata.cover_photo.likes} Likes</span>
                     <button className="imageDeleteBtn" onClick={()=>{this.removeImage()}}>Delete</button>
                 </div>

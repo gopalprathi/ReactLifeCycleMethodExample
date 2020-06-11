@@ -1,35 +1,40 @@
-import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
-import Services from '../../Services/Services';
-import ImageList from '../ImageList/ImageList';
-import './Home.css';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Services from "../../Services/Services";
+import ImageList from "../ImageList/ImageList";
+import "./Home.css";
 
 export default class Home extends Component {
-    state = {
-        data: ''
-    }
+  state = {
+    data: "",
+  };
 
-    componentDidMount(){
-        Services.getImages().then(data => this.setState({data}));
-    }
+  componentDidMount() {
+    Services.getImages().then((data) => this.setState({ data }));
+  }
 
-    componentWillUnmount(){
-        alert("Logged out");
-    }
+  componentWillUnmount() {
+    alert("Logged out");
+  }
 
-    deleteImageHandler = (id) => {
-        Services.deleteImage(id).then(data => this.setState({data}));
-    }
+  deleteImageHandler = (id) => {
+    Services.deleteImage(id).then((data) => this.setState({ data }));
+  };
 
-    render() {
-        return (
-            <>
-                <Link to="/"><button className="primaryBtn">Logout</button></Link>
-                <h1>Image Gallary</h1>
-                <div className="container">
-                    <ImageList data = {this.state.data}  deleteImageHandler={this.deleteImageHandler} />
-                </div>
-            </>
-        );
-    }
+  render() {
+    return (
+      <>
+        <Link to="/">
+          <button className="primaryBtn">Logout</button>
+        </Link>
+        <h1>Image Gallery</h1>
+        <div className="container">
+          <ImageList
+            data={this.state.data}
+            deleteImageHandler={this.deleteImageHandler}
+          />
+        </div>
+      </>
+    );
+  }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { unmountComponentAtNode } from "react-dom";
 import { shallow } from "enzyme";
-import Home from "./Home";
+import ImageItem from "./ImageItem";
 
 let container = null;
 
@@ -18,21 +18,9 @@ afterEach(() => {
   container = null;
 });
 
-const wrapper = shallow(<Home />);
-describe("tests for Home.js", () => {
+const wrapper = shallow(<ImageItem />);
+describe("tests for ImageItem.js", () => {
   it("renders the comoponent", () => {
     expect(wrapper).toBeTruthy();
-  });
-
-  it("should render the button", () => {
-    const button = wrapper.find("button");
-    const buttonText = button.text();
-    expect(buttonText).toBe("Logout");
-  });
-
-  it("should render the h1", () => {
-    const label = wrapper.find("h1");
-    const labelText = label.text();
-    expect(labelText).toBe("Image Gallery");
   });
 });
