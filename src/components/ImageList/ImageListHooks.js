@@ -25,7 +25,6 @@ const ImageListHooks = ({data}) => {
             })
         )
     }
-    return null
 }
 
 export default ImageListHooks;
